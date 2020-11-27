@@ -85,4 +85,98 @@ public class Test2 {
         return result;
     }
 
+    public Map testMap2(Map param) {
+        Map innerMap = (Map)param.get("map");
+        List list = (List)param.get("list");
+        ComplexObject object = (ComplexObject)param.get("object");
+        System.out.println("java console map = " + param.toString());
+        System.out.println("java console innerMap = " + innerMap.toString());
+        System.out.println("java console list = " + list.toString());
+        System.out.println("java console object = " + object.toString());
+        Map result = new HashMap();
+        Map innerMap2 = new HashMap();
+        innerMap2.put("javaReturn", "javaReturnInnerMap");
+        List newList = new ArrayList();
+        newList.add(2);
+        newList.add(4);
+        newList.add(6);
+        ComplexObject complexObject = new ComplexObject();
+        complexObject.responseInit();
+        result.put("map", innerMap2);
+        result.put("list", newList);
+        result.put("object", complexObject);
+        return result;
+    }
+
+    public List testList2(List param) {
+        Map innerMap = (Map)param.get(0);
+        List innerList = (List)param.get(1);
+        ComplexObject object = (ComplexObject)param.get(2);
+        System.out.println("java console param = " + param.toString());
+        System.out.println("java console innerMap = " + innerMap.toString());
+        System.out.println("java console innerList = " + innerList.toString());
+        System.out.println("java console object = " + object.toString());
+
+        List result = new ArrayList();
+        Map innerMap2 = new HashMap();
+        innerMap2.put("javaReturn", "javaReturnInnerMap");
+        List newList = new ArrayList();
+        newList.add(2);
+        newList.add(4);
+        newList.add(6);
+        ComplexObject complexObject = new ComplexObject();
+        complexObject.responseInit();
+        result.add(innerMap2);
+        result.add(newList);
+        result.add(complexObject);
+        return result;
+    }
+
+    public Map testMap3(Map param) {
+        System.out.println("java console param.size() = " + param.size());
+        Map result = new HashMap();
+        int num = 2;
+        for (int i = 0; i < 10000; ++i) {
+            result.put(num, num);
+            num = num + 2;
+        }
+        return result;
+    }
+
+
+    public List testList3(List param){
+        System.out.println("java console param.size() = " + param.size());
+        List result = new ArrayList();
+        int num = 2;
+        for (int i = 0; i < 10000; ++i) {
+            result.add(num);
+            num = num + 2;
+        }
+        return result;
+    }
+
+    public Map testMap4(Map param){
+        System.out.println("java console param.size() = " + param.size());
+        Map result = new HashMap();
+        int num = 2;
+        for (int i = 0; i < 100; ++i) {
+            ComplexObject object = new ComplexObject();
+            object.responseInit();
+            result.put(num, object);
+            num = num + 2;
+        }
+        return result;
+    }
+
+    public List testList4(List param){
+        System.out.println("java console param.size() = " + param.size());
+        List result = new ArrayList();
+        for (int i = 0; i < 100; ++i) {
+            ComplexObject object = new ComplexObject();
+            object.responseInit();
+            result.add(object);
+        }
+        return result;
+    }
+
 }
