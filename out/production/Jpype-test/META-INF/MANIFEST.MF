@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: com.paradigm.jpype.Main
+Main-Class: com.paradigm.jpype.EntryPoint
+Class-Path: py4j-0.10.9.1.jar
 
