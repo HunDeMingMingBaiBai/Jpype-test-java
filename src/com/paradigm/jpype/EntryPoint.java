@@ -28,7 +28,7 @@ public class EntryPoint {
     }
 
     public static void main (String[] args) {
-        GatewayServer gatewayServer = new GatewayServer(new EntryPoint());
+        GatewayServer gatewayServer = new GatewayServer(new EntryPoint(), 25222);
         gatewayServer.start();
         System.out.println("Gateway Server Started");
     }
